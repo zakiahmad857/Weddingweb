@@ -87,7 +87,7 @@ export default {
 
   &__container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 3fr 4fr;
     gap: 2rem;
 
     @media only screen and (orientation: portrait) {
@@ -99,7 +99,7 @@ export default {
   }
 
   &__img {
-    height: 25rem;
+    height: 27rem;
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     justify-self: flex-end;
@@ -128,7 +128,7 @@ export default {
 .text-2 {
   font-size: 1.6rem;
   margin-top: -0.5rem;
-  line-height: 1.4;
+  line-height: 1.2;
   color: $color-blue;
 }
 

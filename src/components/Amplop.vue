@@ -47,6 +47,25 @@
       <div class="amplop__item">
         <p class="text-3 mb-1 relative">
           <span class="item-number">2.</span>
+          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>BCA</strong>
+          <img
+            style="height: 1.5rem"
+            src="../assets/images/logo-bca.png"
+            alt="BCA"
+          />
+        </p>
+        <img src="../assets/images/qr-bca.png" alt="qr-bca" />
+        <p class="text-3 sm center">Phone Number <span>3190158933</span></p>
+        <p class="text-3 sm center">
+          Account Name <span>Gammaditya Adhibarata W</span>
+        </p>
+        <button @click.prevent="handleCopy($event, '3190158933')" class="copy">
+          Copy
+        </button>
+      </div>
+      <div class="amplop__item">
+        <p class="text-3 mb-1 relative">
+          <span class="item-number">3.</span>
 
           {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>Mandiri</strong>
           <img
@@ -55,7 +74,7 @@
             alt="Mandiri"
           />
         </p>
-        <img src="../assets/images/qr-bca.png" alt="qr-bca" />
+        <img src="../assets/images/qr-mandiri.png" alt="qr-mandiri" />
         <p class="text-3 sm center">Phone Number <span>9000033446627</span></p>
         <p class="text-3 sm center">
           Account Name <span>Gammaditya Adhibarata Winarno</span>
@@ -64,25 +83,6 @@
           @click.prevent="handleCopy($event, '9000033446627')"
           class="copy"
         >
-          Copy
-        </button>
-      </div>
-      <div class="amplop__item">
-        <p class="text-3 mb-1 relative">
-          <span class="item-number">3.</span>
-          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>BCA</strong>
-          <img
-            style="height: 1.5rem"
-            src="../assets/images/logo-bca.png"
-            alt="BCA"
-          />
-        </p>
-        <img src="../assets/images/qr-mandiri.png" alt="qr-png" />
-        <p class="text-3 sm center">Phone Number <span>3190158933</span></p>
-        <p class="text-3 sm center">
-          Account Name <span>Gammaditya Adhibarata W</span>
-        </p>
-        <button @click.prevent="handleCopy($event, '3190158933')" class="copy">
           Copy
         </button>
       </div>
@@ -287,7 +287,7 @@ export default {
   }
 
   @media only screen and (max-width: 28.175em) {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     text-align: left;
     margin-top: 8rem;
   }
@@ -387,8 +387,8 @@ export default {
   font-family: Bigilla;
   position: absolute;
   left: -2rem;
-  top: -0.625rem;
-  font-size: 2.4rem;
+  top: -0.8rem;
+  font-size: 2.8rem;
   color: $color-green-a;
 }
 </style>
