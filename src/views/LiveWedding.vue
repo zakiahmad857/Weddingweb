@@ -93,7 +93,7 @@
         <img
           @load="handleLoad"
           class="img-pot"
-          src="../assets/images/image-pot.webp"
+          src="../assets/images/image-pot.png"
           alt="amplop"
         />
       </div>
