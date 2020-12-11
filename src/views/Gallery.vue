@@ -83,7 +83,8 @@ export default {
 @import '../scss/variables.scss';
 
 .gallery {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   background-color: $color-green-c;
 
   &__container {

@@ -1,22 +1,24 @@
 <template>
-  <div v-if="state.isLoading.length < 2" class="img-to-loaded">
-    <loading />
-    <img
-      @load="handleLoad"
-      src="../assets/images/bg-live-wedding.webp"
-      alt=""
-    />
-    <img
-      @load="handleLoad"
-      src="../assets/icons/icon-sound-off.webp"
-      alt="sound-off"
-    />
-  </div>
   <div class="welcome">
-    <decoration />
+    <div v-if="state.isLoading.length < 2" class="img-to-loaded">
+      <loading />
+      <img
+        @load="handleLoad"
+        src="../assets/images/bg-live-wedding.webp"
+        alt=""
+      />
+      <img
+        @load="handleLoad"
+        src="../assets/icons/icon-sound-off.webp"
+        alt="sound-off"
+      />
+    </div>
+    <decoration v-if="!state.transitioning" />
+    <loading style="z-index: 0" v-else />
     <div
       class="welcome-step-1"
       :class="{
+        showing: state.currentStep === 'step-1',
         'fade-out': state.currentStep !== 'step-1' && state.currentStep !== ''
       }"
     >
@@ -80,7 +82,8 @@ export default {
     const state = reactive({
       currentStep: '',
       lang: '',
-      isLoading: []
+      isLoading: [],
+      transitioning: false
     });
     const route = useRoute();
     const router = useRouter();
@@ -93,9 +96,6 @@ export default {
 
     watch(state.isLoading, async (isLoading, _prevLoading) => {
       if (isLoading.length >= 2) {
-        await promiseTimeOut(100);
-        state.currentStep = 'step-1';
-        await promiseTimeOut(3000);
         state.currentStep = 'step-2-showing';
         await promiseTimeOut(300);
         state.currentStep = 'step-2';
@@ -104,7 +104,7 @@ export default {
 
     async function handleSend(name, message) {
       fetch.value = true;
-      await runapi(name, message);
+      // await runapi(name, message);
       fetch.value = false;
 
       state.currentStep = 'step-2-collapsing';
@@ -116,7 +116,12 @@ export default {
 
     async function handleDone(_e) {
       state.currentStep = 'step-3-collapsing';
-      await promiseTimeOut(500).then(() => {
+      await promiseTimeOut(500).then(async () => {
+        state.currentStep = 'step-1';
+        await promiseTimeOut(2000);
+        state.currentStep = 'a';
+        state.transitioning = true;
+        await promiseTimeOut(1000);
         let lang;
         route.path.startsWith('/id') ? (lang = 'id') : (lang = 'en');
         router.push(`/${lang}/live-wedding`);
@@ -166,6 +171,7 @@ export default {
 
 .welcome {
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   background: $color-green-c;
 }
 
@@ -198,14 +204,18 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
+  opacity: 0;
 
-  transition: opacity 2s ease-out, blur 1s 2s;
+  transition: opacity 1s ease-out, blur 1s 2s;
 
   &.fade-out {
     opacity: 0;
     filter: blur(20px);
-    z-index: -1;
+    z-index: 0;
+  }
+
+  &.showing {
+    opacity: 1;
   }
 
   .bg,

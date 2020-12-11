@@ -1,7 +1,7 @@
 <template>
   <loading v-if="state.isPageLoading.length < 14" />
   <div class="siraman">
-    <navigation />
+    <navigation v-show="state.showNav" />
     <div class="siraman__1">
       <h1 class="heading-0">Siraman</h1>
       <p class="text-3 mb-2">
@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import { onMounted, reactive, ref } from 'vue';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import Navigation from '../components/Navigation.vue';
 import BackToTop from '../components/BackToTop.vue';
 import Loading from '../components/Loading.vue';
@@ -121,7 +121,9 @@ export default {
   setup() {
     const state = reactive({
       isScroll: false,
-      isPageLoading: []
+      isPageLoading: [],
+      lastScrollTop: 0,
+      showNav: true
     });
     const siramanTwo = ref(null);
     const iframe = ref(null);
@@ -132,6 +134,28 @@ export default {
 
       document.addEventListener('scroll', handleScroll);
     });
+
+    onMounted(() => {
+      // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+      window.addEventListener('scroll', handleScrollNav, false);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScrollNav, false);
+    });
+
+    function handleScrollNav() {
+      // or window.addEventListener("scroll"....
+      var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      if (st > state.lastScrollTop) {
+        // downscroll code
+        state.showNav = false;
+      } else {
+        // upscroll code
+        state.showNav = true;
+      }
+      state.lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    }
 
     async function handleLoad() {
       await promiseTimeOut(1000);

@@ -144,12 +144,13 @@ export default {
 }
 
 .login {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   background-color: $color-green-c;
   position: relative;
 
   @media only screen and (orientation: portrait) {
-    min-height: 568px;
+    height: 568px;
   }
 
   &__container {
@@ -191,6 +192,10 @@ h2 {
 h1 {
   color: $color-blue-a;
   font-weight: 400;
+
+  @media only screen and (max-width: 28.125em) {
+    font-size: 4.25rem;
+  }
 }
 
 h2 {

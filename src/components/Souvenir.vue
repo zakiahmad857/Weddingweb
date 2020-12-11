@@ -8,10 +8,12 @@
     />
     <h1 class="heading-0 mb-4">SOUVENIR</h1>
     <div class="souvenir__container">
-      <p class="text-2 align-right">
-        Souvenir pernikahan kami merupakan scarf dengan gambar yang dibuat oleh
-        Alfarra. Dengan senang hati kami akan mengirimkannya langsung ke rumah
-        kamu. Isi datamu di bawah ini ya..
+      <p class="text-2">
+        At first the bride did not want to design anything at all as it would
+        put too much pressure on her.
+        <br /><br />
+        The groom however always reminded her of what she’s capable of and thus
+        the souvenirs and website illustrations that you see here.
       </p>
       <img
         class="souvenir__img"
@@ -19,9 +21,14 @@
         alt="Souvenir"
       />
       <p class="text-2">
-        Souvenir pernikahan kami merupakan scarf dengan gambar yang dibuat oleh
-        Alfarra. Dengan senang hati kami akan mengirimkannya langsung ke rumah
-        kamu. Isi datamu di bawah ini ya..
+        The bride and groom hopes you know how much you all mean to them, if
+        situations were different, it would be an honor for them, for you all to
+        come. <br /><br />
+
+        However, they wish you would stay at home, staying healthy and safe
+        always. <br /><br />
+
+        This was a token of their appreciation for you----the one reading this.
       </p>
     </div>
   </div>
@@ -50,6 +57,27 @@ export default {
   position: relative;
   z-index: 999;
   border-radius: 1.2rem;
+  overflow: auto;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $color-green-c;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $color-green-b;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $color-green-a;
+  }
 
   @media only screen and (max-width: 28.125em) {
     width: 100%;
@@ -58,9 +86,12 @@ export default {
   }
 
   &__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
 
-    @media only screen and (max-width: 28.125em) {
+    @media only screen and (orientation: portrait) {
+      display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
@@ -69,14 +100,16 @@ export default {
 
   &__img {
     height: 25rem;
-    margin: 0 2rem;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    justify-self: flex-end;
 
     @media only screen and (max-width: 90em) and (orientation: landscape) {
-      height: 18rem;
+      height: 22rem;
     }
 
     @media only screen and (max-width: 28.125em) {
-      margin: 2rem 0;
+      justify-self: unset;
     }
   }
 }
@@ -85,6 +118,7 @@ export default {
   text-align: center;
   font-weight: 400;
   color: $color-blue;
+  font-size: 5.25rem;
 
   @media only screen and (max-width: 28.125em) {
     text-align: left;
@@ -92,18 +126,10 @@ export default {
 }
 
 .text-2 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   margin-top: -0.5rem;
   line-height: 1.4;
-  color: $color-green;
-
-  &.align-right {
-    text-align: right;
-
-    @media only screen and (max-width: 28.125em) {
-      text-align: left;
-    }
-  }
+  color: $color-blue;
 }
 
 .ic-close {

@@ -37,14 +37,14 @@
           @load="handleLoad"
           v-if="!isPlay"
           @click="this.playMusic"
-          src="../assets/icons/icon-sound-on.webp"
+          src="../assets/icons/icon-sound-off.webp"
           alt="sound-on"
         />
         <img
           @load="handleLoad"
           v-else
           @click="this.stopMusic"
-          src="../assets/icons/icon-sound-off.webp"
+          src="../assets/icons/icon-sound-on.webp"
           alt="sound-off"
         />
         <div style="display: none">
@@ -294,7 +294,8 @@ export default {
   background: url('../assets/images/bg-live-wedding.webp');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -377,6 +378,10 @@ export default {
   left: -18rem;
   height: 40rem;
   z-index: 0;
+
+  @media only screen and (max-width: 43.75em) {
+    opacity: 0;
+  }
 }
 
 .navigation {
@@ -405,7 +410,7 @@ export default {
 }
 
 .nav-item {
-  height: 15rem;
+  height: 16rem;
   cursor: pointer;
   position: relative;
   z-index: 1;

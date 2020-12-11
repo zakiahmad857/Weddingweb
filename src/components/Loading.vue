@@ -2,7 +2,7 @@
   <div class="loading">
     <img
       class="mb-2"
-      src="../assets/images/text-gamma-alfarra-before-event.webp"
+      src="../assets/images/text-gamma-alfarra-before-event.png"
       alt="gamma-alfarra"
     />
     <loading-animation />
@@ -36,12 +36,19 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: $color-green-c;
   z-index: 9999999;
+
+  img {
+    height: 15rem;
+  }
 
   &.collapsed {
     display: none;

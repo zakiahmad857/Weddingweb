@@ -70,7 +70,7 @@ export default {
   box-shadow: 0 0.625rem 1.125rem rgba(0, 0, 0, 0.15);
   display: none;
   transform: scale(0);
-  transition: transform 0.5s 2s;
+  transition: transform 0.5s 0.5s;
 
   @media only screen and (max-width: 90em) and (orientation: landscape) {
     padding: 2rem 4rem;

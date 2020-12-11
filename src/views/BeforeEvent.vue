@@ -7,7 +7,7 @@
       </div>
       <div class="info">
         <img
-          src="../assets/images/text-gamma-alfarra-before-event.webp"
+          src="../assets/images/text-gamma-alfarra-before-event.png"
           alt="gamma-alfarra"
           class="mb-2"
         />
@@ -119,9 +119,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 1rem;
+  padding-top: 5rem;
 
   img {
+    height: 12rem;
+
     @media only screen and (max-width: 75em) {
       height: 10rem;
     }

@@ -9,6 +9,8 @@
 }
 
 html {
+  height: -webkit-fill-available;
+
   @media only screen and (max-width: 50em) {
     font-size: 80%;
   }
@@ -19,7 +21,14 @@ html {
 }
 
 body {
+  height: 100vh;
+  height: -webkit-fill-available;
   font-family: 'Darker Grotesque', sans-serif;
+
+  #app {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
 }
 
 @import './utils.scss';

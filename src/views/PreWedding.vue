@@ -1,7 +1,7 @@
 <template>
   <loading v-if="this.isLoading.length < 23" />
   <div class="pre-wedding">
-    <navigation variant="transparent" />
+    <navigation v-show="state.showNav" variant="transparent" />
     <div class="pre-wedding__1">
       <h1 class="heading-0">Pre-<br />Wed</h1>
       <h1 class="heading mobile mb-1">PreWed</h1>
@@ -283,6 +283,7 @@
 </template>
 
 <script>
+import { onMounted, onUnmounted, reactive } from 'vue';
 import Loading from '../components/Loading.vue';
 import Navigation from '../components/Navigation.vue';
 import { promiseTimeOut } from '../utils/promiseTimeOut';
@@ -290,8 +291,41 @@ import { promiseTimeOut } from '../utils/promiseTimeOut';
 export default {
   components: { Navigation, Loading },
   name: 'PreWedding',
+  setup() {
+    const state = reactive({
+      lastScrollTop: 0,
+      showNav: true
+    });
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScrollNav, false);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScrollNav, false);
+    });
+
+    function handleScrollNav() {
+      // or window.addEventListener("scroll"....
+      var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      if (st > state.lastScrollTop) {
+        // downscroll code
+        state.showNav = false;
+      } else {
+        // upscroll code
+        state.showNav = true;
+      }
+      state.lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    }
+
+    return { state };
+  },
   data() {
-    return { isScroll: false, isPlay: false, isLoading: [] };
+    return {
+      isScroll: false,
+      isPlay: false,
+      isLoading: []
+    };
   },
   mounted() {
     const root = document.getElementsByTagName('html')[0];

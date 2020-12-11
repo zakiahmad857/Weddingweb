@@ -21,39 +21,68 @@
     </p>
     <div class="amplop__items mb-2">
       <div class="amplop__item">
-        <span class="item-number">1.</span>
-        <p class="text-3 mb-1">
+        <p class="text-3 mb-1 relative">
+          <span class="item-number">1.</span>
           {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>OVO</strong>
+          <img
+            style="height: 1rem"
+            src="../assets/images/logo-ovo.png"
+            alt="OVO"
+          />
         </p>
-        <img src="../assets/images/qr-ovo.webp" alt="qr-ovo" />
-        <p class="text-3 sm center">Phone Number xxx</p>
-        <p class="text-3 sm center">Account Name xxx</p>
-        <button @click.prevent="handleCopy($event, '088976512')" class="copy">
+        <img src="../assets/images/qr-ovo.png" alt="qr-ovo" />
+        <p class="text-3 sm center">
+          Phone Number <span>+62877 0001 1296</span>
+        </p>
+        <p class="text-3 sm center">
+          Account Name <span>Alfarra Haryono</span>
+        </p>
+        <button
+          @click.prevent="handleCopy($event, '+62877 0001 1296')"
+          class="copy"
+        >
           Copy
         </button>
       </div>
       <div class="amplop__item">
-        <span class="item-number">2.</span>
+        <p class="text-3 mb-1 relative">
+          <span class="item-number">2.</span>
 
-        <p class="text-3 mb-1">
-          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>OVO</strong>
+          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>Mandiri</strong>
+          <img
+            style="height: 1.7rem"
+            src="../assets/images/logo-mandiri.png"
+            alt="Mandiri"
+          />
         </p>
-        <img src="../assets/images/qr-ovo.webp" alt="qr-ovo" />
-        <p class="text-3 sm center">Phone Number xxx</p>
-        <p class="text-3 sm center">Account Name xxx</p>
-        <button @click.prevent="handleCopy($event, '088976512')" class="copy">
+        <img src="../assets/images/qr-bca.png" alt="qr-bca" />
+        <p class="text-3 sm center">Phone Number <span>9000033446627</span></p>
+        <p class="text-3 sm center">
+          Account Name <span>Gammaditya Adhibarata Winarno</span>
+        </p>
+        <button
+          @click.prevent="handleCopy($event, '9000033446627')"
+          class="copy"
+        >
           Copy
         </button>
       </div>
       <div class="amplop__item">
-        <span class="item-number">3.</span>
-        <p class="text-3 mb-1">
-          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>OVO</strong>
+        <p class="text-3 mb-1 relative">
+          <span class="item-number">3.</span>
+          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>BCA</strong>
+          <img
+            style="height: 1.5rem"
+            src="../assets/images/logo-bca.png"
+            alt="BCA"
+          />
         </p>
-        <img src="../assets/images/qr-ovo.webp" alt="qr-ovo" />
-        <p class="text-3 sm center">Phone Number xxx</p>
-        <p class="text-3 sm center">Account Name xxx</p>
-        <button @click.prevent="handleCopy($event, '088976512')" class="copy">
+        <img src="../assets/images/qr-mandiri.png" alt="qr-png" />
+        <p class="text-3 sm center">Phone Number <span>3190158933</span></p>
+        <p class="text-3 sm center">
+          Account Name <span>Gammaditya Adhibarata W</span>
+        </p>
+        <button @click.prevent="handleCopy($event, '3190158933')" class="copy">
           Copy
         </button>
       </div>
@@ -61,9 +90,9 @@
     <p class="text-2 text-2--kado">
       {{ state.multiLang[lang].footer }}
     </p>
-    <p class="text-3 sm">
-      Jl. Mawar no 26 Komp.deplu <br />
-      Pondok Aren, Tangerang Selatan 15225
+    <p class="text-3 sm orange">
+      Jl. Cakrawijaya I H8, Cipinang Muara, <br />
+      Jatinegara, Jakarta Timur, 13420
     </p>
   </div>
 </template>
@@ -159,8 +188,6 @@ export default {
   &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    justify-items: center;
     margin-top: 1rem;
     border-bottom: 1px solid $color-green-a;
     padding-bottom: 2rem;
@@ -180,8 +207,12 @@ export default {
 
   &__item {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media only screen and (max-width: 28.175em) {
+      align-items: flex-start;
       margin-bottom: 2rem;
       width: 100%;
     }
@@ -192,7 +223,7 @@ export default {
         display: block;
         position: absolute;
         right: 0;
-        top: 30%;
+        top: 9%;
         background: white;
         font-size: 1.2rem;
         padding: 0.5rem 1rem;
@@ -207,8 +238,9 @@ export default {
       }
     }
 
-    img {
+    & > img {
       height: 11rem;
+      margin-bottom: 1rem;
 
       @media only screen and (max-width: 90em) and (orientation: landscape) {
         height: 9rem;
@@ -291,6 +323,11 @@ export default {
 .text-3 {
   color: $color-blue-b;
 
+  @media only screen and (max-width: 28.175em) {
+    font-size: 1.6rem;
+    color: $color-green;
+  }
+
   &.center {
     text-align: center;
 
@@ -304,7 +341,44 @@ export default {
     color: $color-orange;
 
     @media only screen and (max-width: 90em) and (orientation: landscape) {
-      font-size: 1rem;
+      font-size: 1.2rem;
+    }
+
+    @media only screen and (max-width: 28.175em) {
+      font-size: 1.4rem;
+      color: $color-blue-b;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &.orange {
+    color: $color-orange;
+
+    @media only screen and (max-width: 28.175em) {
+      padding-left: 1rem;
+      border-left: 1px solid $color-blue-c;
+    }
+  }
+
+  &.relative {
+    position: relative;
+
+    strong {
+      @media only screen and (max-width: 28.175em) {
+        display: none;
+      }
+    }
+
+    & > img {
+      display: none;
+
+      @media only screen and (max-width: 28.175em) {
+        display: inline;
+        margin-left: 3px;
+      }
     }
   }
 }
@@ -313,7 +387,7 @@ export default {
   font-family: Bigilla;
   position: absolute;
   left: -2rem;
-  top: -10px;
+  top: -0.625rem;
   font-size: 2.4rem;
   color: $color-green-a;
 }

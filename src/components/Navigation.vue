@@ -34,25 +34,25 @@
     >
       <img
         v-if="this.variant === 'transparent' && !isPlay"
-        src="../assets/icons/icon-sound-on-grey.webp"
+        src="../assets/icons/icon-sound-off-grey.webp"
         alt="home"
         @click.prevent="this.playMusic"
       />
       <img
         v-else-if="!isPlay"
-        src="../assets/icons/icon-sound-on.webp"
+        src="../assets/icons/icon-sound-off.webp"
         alt="home"
         @click.prevent="this.playMusic"
       />
       <img
         v-else-if="isPlay && this.variant !== 'transparent'"
-        src="../assets/icons/icon-sound-off.webp"
+        src="../assets/icons/icon-sound-on.webp"
         alt="home"
         @click.prevent="this.stopMusic"
       />
       <img
         v-else
-        src="../assets/icons/icon-sound-off-grey.webp"
+        src="../assets/icons/icon-sound-on-grey.webp"
         alt="sound-on"
         @click.prevent="this.stopMusic"
       />

@@ -211,9 +211,10 @@ export default {
 
   &__btn {
     font-size: 1rem;
-    min-width: 7rem;
+    min-width: 9rem;
     font-weight: 700;
     padding: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   &__buttons {
