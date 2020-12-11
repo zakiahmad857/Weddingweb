@@ -40,7 +40,7 @@
         </p>
         <img src="../assets/images/qr-bca.png" alt="qr-bca" />
         <p class="text-3 sm center">Bank Account 3190158933</p>
-        <p class="text-3 sm center">Account Name Gammaditya Adhibarata Winarno</p>
+        <p class="text-3 sm center">Account Name Gammaditya<br>Adhibarata Winarno</p>
         <button @click.prevent="handleCopy($event, '088976512')" class="copy">
           Copy
         </button>
@@ -52,7 +52,7 @@
         </p>
         <img src="../assets/images/qr-mandiri.png" alt="qr-mandiri" />
         <p class="text-3 sm center">Bank Account 9000033446627</p>
-        <p class="text-3 sm center">Account Name Gammaditya Adhibarata Winarno</p>
+        <p class="text-3 sm center">Account Name Gammaditya<br>Adhibarata Winarno</p>
         <button @click.prevent="handleCopy($event, '088976512')" class="copy">
           Copy
         </button>
