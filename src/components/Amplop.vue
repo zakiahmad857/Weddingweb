@@ -10,10 +10,10 @@
       class="ic-close"
     />
     <div class="bg-top">
-      <img src="../assets/images/bg-amplop-top.webp" alt="" />
+      <img src="../assets/images/bg-amplop-top.png" alt="" />
     </div>
     <div class="bg-bottom">
-      <img src="../assets/images/bg-amplop-bottom.webp" alt="" />
+      <img src="../assets/images/bg-amplop-bottom.png" alt="" />
     </div>
     <h1 class="heading-0 mb-1">E-AMPLOP</h1>
     <p class="text-2">
@@ -25,9 +25,9 @@
         <p class="text-3 mb-1">
           {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>OVO</strong>
         </p>
-        <img src="../assets/images/qr-ovo.webp" alt="qr-ovo" />
-        <p class="text-3 sm center">Phone Number xxx</p>
-        <p class="text-3 sm center">Account Name xxx</p>
+        <img src="../assets/images/qr-ovo.png" alt="qr-ovo" />
+        <p class="text-3 sm center">Phone Number +62877 0001 1296</p>
+        <p class="text-3 sm center">Account Name Alfarra Haryono</p>
         <button @click.prevent="handleCopy($event, '088976512')" class="copy">
           Copy
         </button>
@@ -36,11 +36,11 @@
         <span class="item-number">2.</span>
 
         <p class="text-3 mb-1">
-          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>OVO</strong>
+          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>BCA</strong>
         </p>
-        <img src="../assets/images/qr-ovo.webp" alt="qr-ovo" />
-        <p class="text-3 sm center">Phone Number xxx</p>
-        <p class="text-3 sm center">Account Name xxx</p>
+        <img src="../assets/images/qr-bca.png" alt="qr-ovo" />
+        <p class="text-3 sm center">Bank Account 3190158933</p>
+        <p class="text-3 sm center">Account Name Gammaditya Adhibarata Winarno</p>
         <button @click.prevent="handleCopy($event, '088976512')" class="copy">
           Copy
         </button>
@@ -48,11 +48,11 @@
       <div class="amplop__item">
         <span class="item-number">3.</span>
         <p class="text-3 mb-1">
-          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>OVO</strong>
+          {{ lang === 'id' ? 'Kirim' : 'Send' }} via <strong>Mandiri</strong>
         </p>
-        <img src="../assets/images/qr-ovo.webp" alt="qr-ovo" />
-        <p class="text-3 sm center">Phone Number xxx</p>
-        <p class="text-3 sm center">Account Name xxx</p>
+        <img src="../assets/images/qr-mandiri.png" alt="qr-ovo" />
+        <p class="text-3 sm center">Bank Account 9000033446627</p>
+        <p class="text-3 sm center">Account Name Gammaditya Adhibarata Winarno</p>
         <button @click.prevent="handleCopy($event, '088976512')" class="copy">
           Copy
         </button>
