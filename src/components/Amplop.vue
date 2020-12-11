@@ -10,10 +10,10 @@
       class="ic-close"
     />
     <div class="bg-top">
-      <img src="../assets/images/bg-amplop-top.webp" alt="" />
+      <img src="../assets/images/bg-amplop-top.png" alt="" />
     </div>
     <div class="bg-bottom">
-      <img src="../assets/images/bg-amplop-bottom.webp" alt="" />
+      <img src="../assets/images/bg-amplop-bottom.png" alt="" />
     </div>
     <h1 class="heading-0 mb-1">E-AMPLOP</h1>
     <p class="text-2">

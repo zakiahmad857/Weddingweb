@@ -53,7 +53,7 @@
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/5PJXAHzqr8U?autoplay=1"
+                src="https://www.youtube.com/embed/videoseries?list=PL1u1yEAodhLJPho06Sw1VxOM-tMItjY6C&autoplay=1"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
@@ -93,7 +93,7 @@
         <img
           @load="handleLoad"
           class="img-pot"
-          src="../assets/images/image-pot.webp"
+          src="../assets/images/image-pot.png"
           alt="amplop"
         />
       </div>
@@ -375,7 +375,7 @@ export default {
 .img-pot {
   position: absolute;
   top: -30rem;
-  left: -18rem;
+  left: -19rem;
   height: 40rem;
   z-index: 0;
 
