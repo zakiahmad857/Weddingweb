@@ -69,7 +69,7 @@
           @load="handleLoad"
           id="step-2"
           class="nav-item"
-          src="../assets/images/nav-gallery.webp"
+          src="../assets/images/nav-gallery.png"
           alt="gallery"
         />
       </router-link>
@@ -78,7 +78,7 @@
         id="step-3"
         @click="handleClose('souvenir')"
         class="nav-item nav-item--souvenir"
-        src="../assets/images/nav-souvenir.webp"
+        src="../assets/images/nav-souvenir.png"
         alt="souvenir"
       />
       <div style="position: relative">
@@ -87,7 +87,7 @@
           @click="handleClose('amplop')"
           id="step-4"
           class="nav-item"
-          src="../assets/images/nav-amplop.webp"
+          src="../assets/images/nav-amplop.png"
           alt="amplop"
         />
         <img
@@ -102,7 +102,7 @@
       <div class="video__container">
         <img
           @load="handleLoad"
-          src="../assets/images/wedding-gamma-alfarra.webp"
+          src="../assets/images/wedding-gamma-alfarra.png"
           alt="Wedding Gamma Alfarra"
           class="video__text"
         />
