@@ -104,7 +104,7 @@ export default {
 
     async function handleSend(name, message) {
       fetch.value = true;
-      // await runapi(name, message);
+      await runapi(name, message);
       fetch.value = false;
 
       state.currentStep = 'step-2-collapsing';
