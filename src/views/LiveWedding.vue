@@ -37,14 +37,14 @@
           @load="handleLoad"
           v-if="!isPlay"
           @click="this.playMusic"
-          src="../assets/icons/icon-sound-off.webp"
+          src="../assets/icons/icon-sound-off.png"
           alt="sound-on"
         />
         <img
           @load="handleLoad"
           v-else
           @click="this.stopMusic"
-          src="../assets/icons/icon-sound-on.webp"
+          src="../assets/icons/icon-sound-on.png"
           alt="sound-off"
         />
         <div style="display: none">
