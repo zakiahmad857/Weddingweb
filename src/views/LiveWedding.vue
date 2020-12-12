@@ -53,7 +53,7 @@
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed?listType=playlist&list=PL1u1yEAodhLJPho06Sw1VxOM-tMItjY6C"
+                src="https://www.youtube.com/embed?listType=playlist&list=PL1u1yEAodhLJPho06Sw1VxOM-tMItjY6C&playsinline=1"
                 frameborder="0"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
