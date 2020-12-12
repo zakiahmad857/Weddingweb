@@ -287,6 +287,7 @@ import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import Loading from '../components/Loading.vue';
 import Navigation from '../components/Navigation.vue';
 import { promiseTimeOut } from '../utils/promiseTimeOut';
+import { isIOS } from '../utils/isIos';
 
 export default {
   components: { Navigation, Loading },
@@ -361,10 +362,12 @@ export default {
   methods: {
     scrollToTwo() {
       const { top } = this.$refs.preWed2.getBoundingClientRect();
-      window.scrollTo({ top, behavior: 'smooth', left: 0 });
+      if (isIOS()) window.scroll({ left: 0, top, behavior: 'smooth' });
+      else window.scrollTo({ top, behavior: 'smooth', left: 0 });
     },
     scrollToTop() {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      if (!isIOS()) window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      else window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     },
     handleScroll() {
       const { top } = this.$refs.preWed2.getBoundingClientRect();

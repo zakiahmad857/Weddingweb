@@ -128,6 +128,7 @@ import Navigation from '../components/Navigation.vue';
 import BackToTop from '../components/BackToTop.vue';
 import Loading from '../components/Loading.vue';
 import { promiseTimeOut } from '../utils/promiseTimeOut';
+import { isIOS } from '../utils/isIos';
 
 export default {
   name: 'Siraman',
@@ -207,7 +208,8 @@ export default {
 
     function scrollToTwo() {
       const { top } = siramanTwo.value.getBoundingClientRect();
-      window.scrollTo({ top, behavior: 'smooth', left: 0 });
+      if (isIOS()) window.scroll({ left: 0, top, behavior: 'smooth' });
+      else window.scrollTo({ top, behavior: 'smooth', left: 0 });
     }
 
     function handleScroll() {
@@ -221,7 +223,8 @@ export default {
     }
 
     function scrollToTop() {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      if (!isIOS()) window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      else window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }
 
     return {
