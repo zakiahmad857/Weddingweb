@@ -1,15 +1,10 @@
 <template>
-  <loading v-if="state.isPageLoading.length < 14" />
+  <loading v-if="state.isPageLoading.length < 13" />
   <div class="siraman">
     <navigation v-show="state.showNav" />
     <div ref="preWed1" class="siraman__1">
-      <h1 class="heading-0">Siraman</h1>
-      <p class="text-3 mb-2">
-        Pengajian merupakan blablablabla Pengajian merupakan blablablabla
-        Pengajian merupakan blablablabla Pengajian merupakan
-        blablablablaPengajian merupakan blablablablaPengajian merupakan
-        blablablabla
-      </p>
+      <h1 class="heading-0">PENGAJIAN</h1>
+      <p class="text-3 mb-2"></p>
       <div class="video">
         <vue-plyr
           :options="{ settings: ['captions', 'quality', 'speed', 'loop'] }"
@@ -19,7 +14,7 @@
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/gIB2egm7tL8"
+              src="https://youtu.be/LdS6X3XaftM"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -27,8 +22,7 @@
           </div>
         </vue-plyr>
         <div class="creator">
-          Videographer by Ivan Dimas Saputra <br />
-          Editor by Gamma Winarno
+          Videographer & Editor Potomoto
         </div>
       </div>
       <div @click="scrollToTwo" class="arrow-down">
@@ -43,61 +37,82 @@
       <img
         @load="handleLoad"
         class="img"
-        src="../assets/images/prewed-5.webp"
+        src="../assets/images/pengajian-1.png"
       />
     </div>
     <div class="siraman__3">
       <div class="img-container">
-        <img @load="handleLoad" src="../assets/images/prewed-9.webp" alt="" />
+        <img @load="handleLoad" src="../assets/images/pengajian-2.png" alt="" />
       </div>
     </div>
     <div class="siraman__4">
       <img
         @load="handleLoad"
-        src="../assets/images/prewed-6.webp"
+        src="../assets/images/pengajian-3.png"
         class="img"
       />
     </div>
     <div class="siraman__5">
       <div class="container">
         <div class="img-container">
-          <img @load="handleLoad" src="../assets/images/prewed-2.webp" alt="" />
+          <img
+            @load="handleLoad"
+            src="../assets/images/pengajian-4.png"
+            alt=""
+          />
         </div>
         <div class="img-container">
-          <img @load="handleLoad" src="../assets/images/prewed-3.webp" alt="" />
+          <img
+            @load="handleLoad"
+            src="../assets/images/pengajian-5.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
     <div class="siraman__6">
       <div class="img-container">
-        <img @load="handleLoad" src="../assets/images/prewed-4.webp" alt="" />
+        <img @load="handleLoad" src="../assets/images/pengajian-6.png" alt="" />
       </div>
       <div class="img-container">
-        <img @load="handleLoad" src="../assets/images/prewed-4.webp" alt="" />
+        <img @load="handleLoad" src="../assets/images/pengajian-7.png" alt="" />
       </div>
     </div>
     <div class="siraman__7">
       <div class="img-container">
-        <img @load="handleLoad" src="../assets/images/prewed-9.webp" alt="" />
+        <img @load="handleLoad" src="../assets/images/pengajian-9.png" alt="" />
       </div>
     </div>
     <div class="siraman__8">
       <div class="img-container">
-        <img @load="handleLoad" src="../assets/images/prewed-10.webp" alt="" />
+        <img
+          @load="handleLoad"
+          src="../assets/images/pengajian-10.png"
+          alt=""
+        />
       </div>
       <div class="img-container">
-        <img @load="handleLoad" src="../assets/images/prewed-11.webp" alt="" />
+        <img
+          @load="handleLoad"
+          src="../assets/images/pengajian-11.png"
+          alt=""
+        />
       </div>
       <div class="img-container">
-        <img @load="handleLoad" src="../assets/images/prewed-12.webp" alt="" />
+        <img
+          @load="handleLoad"
+          src="../assets/images/pengajian-12.png"
+          alt=""
+        />
       </div>
     </div>
     <div class="siraman__9">
       <div class="img-container">
-        <img @load="handleLoad" src="../assets/images/prewed-13.webp" alt="" />
-      </div>
-      <div class="img-container">
-        <img @load="handleLoad" src="../assets/images/prewed-14.webp" alt="" />
+        <img
+          @load="handleLoad"
+          src="../assets/images/pengajian-13.png"
+          alt=""
+        />
       </div>
     </div>
     <back-to-top

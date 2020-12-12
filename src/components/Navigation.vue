@@ -109,10 +109,10 @@ export default {
       !(
         this.$route.path === `/${this.state.lang}/gallery` ||
         this.$route.path === `/${this.state.lang}/gallery/pre-wedding` ||
-        this.$route.path === `/${this.state.lang}/gallery/pengajian` ||
+        this.$route.path === `/${this.state.lang}/gallery/siraman` ||
         this.$route.path === `/${this.state.lang}/gallery/` ||
         this.$route.path === `/${this.state.lang}/gallery/pre-wedding/` ||
-        this.$route.path === `/${this.state.lang}/gallery/pengajian/`
+        this.$route.path === `/${this.state.lang}/gallery/siraman/`
       ) &&
       iframe.length < 2
     ) {

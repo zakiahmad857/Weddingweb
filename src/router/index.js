@@ -62,22 +62,22 @@ const routes = [
   {
     path: '/id/gallery/siraman',
     name: 'Siraman',
-    component: Siraman
+    component: Pengajian
   },
   {
     path: '/en/gallery/siraman',
     name: 'Siraman-en',
-    component: Siraman
+    component: Pengajian
   },
   {
     path: '/id/gallery/pengajian',
     name: 'Pengajian',
-    component: Pengajian
+    component: Siraman
   },
   {
     path: '/en/gallery/pengajian',
     name: 'Pengajian-en',
-    component: Pengajian
+    component: Siraman
   },
   {
     path: '/before-event',
