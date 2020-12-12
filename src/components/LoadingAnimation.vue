@@ -1,5 +1,5 @@
 <template>
-  <span :class="[this.class]" class="lds-ring">
+  <span class="lds-ring">
     <div></div>
     <div></div>
     <div></div>
@@ -9,10 +9,7 @@
 
 <script>
 export default {
-  name: 'LoadingAnimation',
-  props: {
-    class: String
-  }
+  name: 'LoadingAnimation'
 };
 </script>
 
