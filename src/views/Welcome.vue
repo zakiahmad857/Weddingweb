@@ -4,7 +4,7 @@
       <loading />
       <img
         @load="handleLoad"
-        src="../assets/images/bg-live-wedding.jpg"
+        src="../assets/images/bg-live-wedding.png"
         alt=""
       />
       <img
