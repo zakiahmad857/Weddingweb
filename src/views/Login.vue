@@ -114,7 +114,7 @@ export default {
     }
 
     function handleLogin() {
-      if (state.inputVal === 'guest.alfarra') {
+      if (state.inputVal === 'Guestgammalfarra') {
         router.push(`/${state.lang}/welcome`);
       } else if (state.inputVal.trim().length === 0) {
         alert(
