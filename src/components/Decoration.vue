@@ -11,7 +11,7 @@ export default {
 
 <style lang="scss" scoped>
 .bg-top {
-  background-image: url('../assets/images/bg-login-flower-top.webp');
+  background-image: url('../assets/images/bg-login-flower-top.png');
   height: 30vh;
   top: 0;
   background-position: center bottom;
@@ -28,12 +28,12 @@ export default {
 .bg-bottom {
   bottom: 0;
   height: 40vh;
-  background-image: url('../assets/images/bg-login-flower-bottom.webp');
+  background-image: url('../assets/images/bg-login-flower-bottom.png');
   background-position: center top;
 
   @media only screen and (max-width: 28.125em) {
     height: 30vh;
-    background-image: url('../assets/images/bg-login-flower-bottom-mobile.webp');
+    background-image: url('../assets/images/bg-login-flower-bottom-mobile.png');
   }
 }
 

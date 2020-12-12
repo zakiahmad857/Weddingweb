@@ -4,12 +4,12 @@
       <loading />
       <img
         @load="handleLoad"
-        src="../assets/images/bg-live-wedding.webp"
+        src="../assets/images/bg-live-wedding.png"
         alt=""
       />
       <img
         @load="handleLoad"
-        src="../assets/icons/icon-sound-off.webp"
+        src="../assets/icons/icon-sound-off.png"
         alt="sound-off"
       />
     </div>
@@ -25,7 +25,7 @@
       <div class="bg"></div>
       <div class="bg-1"></div>
       <img
-        src="../assets/images/image-welcome.webp"
+        src="../assets/images/image-welcome.png"
         alt="welcome"
         class="welcome-img"
         :class="{
