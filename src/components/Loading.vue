@@ -21,7 +21,7 @@ export default {
     });
 
     onUnmounted(() => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = 'auto';
     });
   }
 };
