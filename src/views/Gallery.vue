@@ -11,7 +11,7 @@
             <h2 class="heading-1">Siraman</h2>
             <img
               @load="handleLoad"
-              src="../assets/images/artwork-canvas.webp"
+              src="../assets/images/artwork-canvas.png"
               alt="siraman"
             />
           </div>
@@ -21,7 +21,7 @@
             <h2 class="heading-1">Pre-Wedding</h2>
             <img
               @load="handleLoad"
-              src="../assets/images/artwork-canvas.webp"
+              src="../assets/images/artwork-canvas.png"
               alt="pre-wedding"
             />
           </div>
@@ -31,7 +31,7 @@
             <h2 class="heading-1">Pengajian</h2>
             <img
               @load="handleLoad"
-              src="../assets/images/artwork-canvas.webp"
+              src="../assets/images/artwork-canvas.png"
               alt="pengajian"
             />
           </div>

@@ -5,28 +5,28 @@
       @load="handleLoad"
       v-if="state.isLoading.length < 4"
       style="position: absolute"
-      src="../assets/images/image-welcome.webp"
+      src="../assets/images/image-welcome.png"
       alt=""
     />
     <img
       @load="handleLoad"
       v-if="state.isLoading.length < 4"
       style="position: absolute"
-      src="../assets/images/image-couple.webp"
+      src="../assets/images/image-couple.png"
       alt=""
     />
     <img
       @load="handleLoad"
       v-if="state.isLoading.length < 4"
       style="position: absolute"
-      src="../assets/images/bg-login-flower-top.webp"
+      src="../assets/images/bg-login-flower-top.png"
       alt=""
     />
     <img
       @load="handleLoad"
       v-if="state.isLoading.length < 4"
       style="position: absolute"
-      src="../assets/images/bg-login-flower-bottom.webp"
+      src="../assets/images/bg-login-flower-bottom.png"
       alt=""
     />
     <decoration />
