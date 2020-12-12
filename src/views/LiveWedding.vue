@@ -121,7 +121,7 @@
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/bR8EkA1wUqo?autoplay=1&playsinline=1"
+              src="https://www.youtube.com/embed/bR8EkA1wUqo?autoplay=1&playsinline=1&origin=https://www.youtube.com"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
