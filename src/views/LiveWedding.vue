@@ -257,7 +257,7 @@ export default {
   async mounted() {
     const iframe = document.getElementsByTagName('iframe');
 
-    if (iframe.length < 1) window.location.reload();
+    if (iframe.length < 2) window.location.reload();
     else {
       const cookie = Cookies.get('isFinishedTutorial');
       if (!cookie) {
