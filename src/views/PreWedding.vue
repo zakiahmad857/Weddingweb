@@ -389,12 +389,12 @@ export default {
 </style>
 
 <style>
-html.snap-scroll {
+/* html.snap-scroll {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 body.snap-scroll {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-}
+} */
 </style>
