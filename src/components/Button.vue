@@ -1,13 +1,10 @@
 <template>
   <button
     class="btn"
-    :class="[
-      this.class,
-      { 'btn--grey': this.color === 'grey', 'btn--loading': this.isLoading }
-    ]"
+    :class="[{ 'btn--grey': color === 'grey', 'btn--loading': isLoading }]"
   >
     <loading-animation v-if="isLoading" class="sm green mr-1" />
-    <slot v-if="!this.isLoading" />
+    <slot v-if="!isLoading" />
     <span v-else>Loading...</span>
   </button>
 </template>
@@ -18,7 +15,6 @@ export default {
   components: { LoadingAnimation },
   name: 'Button',
   props: {
-    class: String,
     color: String,
     isLoading: {
       type: Boolean,

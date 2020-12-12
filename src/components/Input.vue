@@ -6,8 +6,8 @@
     type="text"
     :name="name"
     v-model="state.value"
-    :class="[this.class, { active: state.value.length > 0 }]"
-    :placeholder="this.placeholder"
+    :class="[{ active: state.value.length > 0 }]"
+    :placeholder="placeholder"
   />
 </template>
 
@@ -19,7 +19,6 @@ export default {
   props: {
     value: String,
     name: String,
-    class: String,
     placeholder: String
   },
   setup(_props, ctx) {
