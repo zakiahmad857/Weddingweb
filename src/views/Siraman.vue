@@ -146,9 +146,18 @@ export default {
 
     onMounted(() => {
       const root = document.getElementsByTagName('html')[0];
+      document.body.classList.add('snap-scroll');
       root.classList.add('snap-scroll');
 
       document.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      const root = document.getElementsByTagName('html')[0];
+      document.body.classList.remove('snap-scroll');
+      root.classList.remove('snap-scroll');
+
+      document.removeEventListener('scroll', handleScroll);
     });
 
     onMounted(() => {

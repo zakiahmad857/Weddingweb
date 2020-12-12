@@ -99,6 +99,16 @@
       </div>
     </nav>
     <div id="step-1" class="video">
+      <img
+        src="../assets/images/decor-video-top.png"
+        alt="Decor Top"
+        class="video__decor"
+      />
+      <img
+        src="../assets/images/decor-video-bottom.png"
+        alt="Decor Bottom"
+        class="video__decor"
+      />
       <div class="video__container">
         <img
           @load="handleLoad"
@@ -159,7 +169,7 @@ export default {
           {
             name: 'offset',
             options: {
-              offset: [0, -40]
+              offset: [0, -60]
             }
           },
           {
@@ -341,6 +351,30 @@ export default {
     border: 10px solid $color-green-c;
     height: 100%;
     width: 100%;
+  }
+
+  &__decor {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: -1;
+
+    &:first-child {
+      top: -7rem;
+
+      @media only screen and (max-width: 68.75em) {
+        top: -4rem;
+      }
+    }
+
+    &:nth-child(2) {
+      bottom: -7rem;
+
+      @media only screen and (max-width: 68.75em) {
+        bottom: -4rem;
+      }
+    }
   }
 }
 

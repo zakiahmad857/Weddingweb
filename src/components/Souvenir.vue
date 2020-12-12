@@ -96,11 +96,11 @@ export default {
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
+      grid-gap: 0;
+      gap: 0;
 
-      @supports not (gap: 2rem) {
-        .souvenir__img {
-          margin: 2rem 0;
-        }
+      .souvenir__img {
+        margin: 2rem 0;
       }
     }
   }

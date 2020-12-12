@@ -346,12 +346,14 @@ export default {
   },
   mounted() {
     const root = document.getElementsByTagName('html')[0];
+    document.body.classList.add('snap-scroll');
     root.classList.add('snap-scroll');
 
     document.addEventListener('scroll', this.handleScroll);
   },
   unmounted() {
     const root = document.getElementsByTagName('html')[0];
+    document.body.classList.remove('snap-scroll');
     root.classList.remove('snap-scroll');
 
     document.removeEventListener('scroll', this.handleScroll);
@@ -388,6 +390,10 @@ export default {
 
 <style>
 html.snap-scroll {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+body.snap-scroll {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
