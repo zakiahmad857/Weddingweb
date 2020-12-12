@@ -266,7 +266,7 @@
       />
     </div>
     <div
-      :class="{ showed: isScroll }"
+      :class="{ showed: isScroll && state.showNav }"
       @click="this.scrollToTop"
       class="back-to-top"
     >

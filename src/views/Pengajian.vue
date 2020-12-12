@@ -81,7 +81,10 @@
         <img @load="handleLoad" src="../assets/images/prewed-14.webp" alt="" />
       </div>
     </div>
-    <back-to-top @click="scrollToTop" :isScroll="state.isScroll" />
+    <back-to-top
+      @click="scrollToTop"
+      :isScroll="state.isScroll && state.showNav"
+    />
   </div>
 </template>
 
