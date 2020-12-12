@@ -2,7 +2,7 @@
   <loading v-if="state.isLoading.length < 13" />
   <div class="pengajian">
     <navigation v-show="state.showNav" />
-    <div class="pengajian__1">
+    <div ref="preWed1" class="pengajian__1">
       <h1 class="heading-0">PENGAJIAN</h1>
       <p class="text-3 mb-2">
         Pengajian merupakan blablablabla Pengajian merupakan blablablabla
@@ -107,6 +107,22 @@ export default {
       showNav: true
     });
     const siramanTwo = ref(null);
+    const preWed1 = ref(null);
+
+    const appHeight = () => {
+      const doc = preWed1.value;
+
+      doc.style.height = `${window.innerHeight}px`;
+    };
+
+    onMounted(() => {
+      window.addEventListener('resize', appHeight);
+      appHeight();
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', appHeight);
+    });
 
     onMounted(() => {
       const root = document.getElementsByTagName('html')[0];
@@ -161,7 +177,7 @@ export default {
       state.isLoading.push(true);
     }
 
-    return { scrollToTwo, siramanTwo, state, scrollToTop, handleLoad };
+    return { scrollToTwo, siramanTwo, state, scrollToTop, handleLoad, preWed1 };
   }
 };
 </script>

@@ -88,6 +88,7 @@ export default {
   &__container {
     display: grid;
     grid-template-columns: 3fr 4fr;
+    grid-gap: 2rem;
     gap: 2rem;
 
     @media only screen and (orientation: portrait) {
@@ -95,6 +96,12 @@ export default {
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
+
+      @supports not (gap: 2rem) {
+        .souvenir__img {
+          margin: 2rem 0;
+        }
+      }
     }
   }
 

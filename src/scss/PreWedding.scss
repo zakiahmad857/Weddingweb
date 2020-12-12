@@ -68,7 +68,7 @@
 
   &__2 {
     @media only screen and (orientation: portrait) {
-      grid-template-columns: none;
+      grid-template-columns: 1fr;
       align-items: flex-start;
     }
 
@@ -106,8 +106,6 @@
 
       @media only screen and (max-width: 28.175em) {
         width: 100%;
-        border-bottom: 1px solid $color-black-4;
-        padding-bottom: 2rem;
       }
     }
 
@@ -641,6 +639,7 @@
 
   @media only screen and (max-width: 28.175em) {
     right: 50%;
+    bottom: 1rem;
     transform: translate(50%);
   }
 

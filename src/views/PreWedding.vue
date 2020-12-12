@@ -2,7 +2,7 @@
   <loading v-if="this.isLoading.length < 23" />
   <div class="pre-wedding">
     <navigation v-show="state.showNav" variant="transparent" />
-    <div class="pre-wedding__1">
+    <div ref="preWed1" class="pre-wedding__1">
       <h1 class="heading-0">Pre-<br />Wed</h1>
       <h1 class="heading mobile mb-1">PreWed</h1>
       <p class="creator">
@@ -283,7 +283,7 @@
 </template>
 
 <script>
-import { onMounted, onUnmounted, reactive } from 'vue';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import Loading from '../components/Loading.vue';
 import Navigation from '../components/Navigation.vue';
 import { promiseTimeOut } from '../utils/promiseTimeOut';
@@ -295,6 +295,23 @@ export default {
     const state = reactive({
       lastScrollTop: 0,
       showNav: true
+    });
+
+    const preWed1 = ref(null);
+
+    const appHeight = () => {
+      const doc = preWed1.value;
+
+      doc.style.height = `${window.innerHeight}px`;
+    };
+
+    onMounted(() => {
+      window.addEventListener('resize', appHeight);
+      appHeight();
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', appHeight);
     });
 
     onMounted(() => {
@@ -318,7 +335,7 @@ export default {
       state.lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     }
 
-    return { state };
+    return { state, preWed1 };
   },
   data() {
     return {

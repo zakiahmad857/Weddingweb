@@ -2,7 +2,7 @@
   <loading v-if="state.isPageLoading.length < 14" />
   <div class="siraman">
     <navigation v-show="state.showNav" />
-    <div class="siraman__1">
+    <div ref="preWed1" class="siraman__1">
       <h1 class="heading-0">Siraman</h1>
       <p class="text-3 mb-2">
         Pengajian merupakan blablablabla Pengajian merupakan blablablabla
@@ -127,6 +127,22 @@ export default {
     });
     const siramanTwo = ref(null);
     const iframe = ref(null);
+    const preWed1 = ref(null);
+
+    const appHeight = () => {
+      const doc = preWed1.value;
+
+      doc.style.height = `${window.innerHeight}px`;
+    };
+
+    onMounted(() => {
+      window.addEventListener('resize', appHeight);
+      appHeight();
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', appHeight);
+    });
 
     onMounted(() => {
       const root = document.getElementsByTagName('html')[0];
@@ -181,7 +197,15 @@ export default {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }
 
-    return { scrollToTwo, siramanTwo, state, scrollToTop, handleLoad, iframe };
+    return {
+      scrollToTwo,
+      siramanTwo,
+      state,
+      scrollToTop,
+      handleLoad,
+      iframe,
+      preWed1
+    };
   }
 };
 </script>

@@ -375,8 +375,8 @@ export default {
 .img-pot {
   position: absolute;
   top: -30rem;
-  left: -19rem;
-  height: 40rem;
+  left: -18rem;
+  height: 38rem;
   z-index: 0;
 
   @media only screen and (max-width: 43.75em) {

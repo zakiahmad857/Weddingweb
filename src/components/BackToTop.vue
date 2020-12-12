@@ -33,6 +33,7 @@ export default {
 
   @media only screen and (max-width: 28.175em) {
     right: 50%;
+    bottom: 1rem;
     transform: translate(50%);
   }
 
