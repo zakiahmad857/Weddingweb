@@ -1,11 +1,14 @@
 <template>
   <button
+    v-if="!isLoading"
     class="btn"
     :class="[{ 'btn--grey': color === 'grey', 'btn--loading': isLoading }]"
   >
-    <loading-animation v-if="isLoading" class="sm green mr-1" />
-    <slot v-if="!isLoading" />
-    <span v-show="isLoading">Loading...</span>
+    <slot />
+  </button>
+  <button class="btn btn--loading" v-else>
+    <loading-animation class="sm green mr-1" />
+    Loading...
   </button>
 </template>
 
