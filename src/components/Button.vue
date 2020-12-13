@@ -5,7 +5,7 @@
   >
     <loading-animation v-if="isLoading" class="sm green mr-1" />
     <slot v-if="!isLoading" />
-    <span v-else>Loading...</span>
+    <span v-show="isLoading">Loading...</span>
   </button>
 </template>
 
