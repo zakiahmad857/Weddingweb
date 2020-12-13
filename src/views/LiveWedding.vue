@@ -130,7 +130,12 @@
         </vue-plyr>
       </div>
     </div>
-    <tour ref="tour" :lang="state.lang" :steps="steps" />
+    <tour
+      ref="tour"
+      :lang="state.lang"
+      :stepsMobile="stepsMobile"
+      :steps="steps"
+    />
   </div>
 </template>
 
@@ -144,6 +149,7 @@ import Amplop from '../components/Amplop.vue';
 import { promiseTimeOut } from '../utils/promiseTimeOut';
 import Tour from '../components/Tour.vue';
 import TourMultiLang from '../json/Tour.json';
+import TourMultiLangMobile from '../json/TourMobile.json';
 import Loading from '../components/Loading.vue';
 
 export default {
@@ -228,6 +234,75 @@ export default {
       }
     ]);
 
+    const stepsMobile = computed(() => [
+      {
+        header: TourMultiLangMobile[state.lang]['step-1'].header,
+        content: TourMultiLangMobile[state.lang]['step-1'].content,
+        position: 'bottom',
+        target: '#step-1',
+        modifiers: [
+          {
+            name: 'offset',
+            options: {
+              offset: [0, -60]
+            }
+          },
+          {
+            name: 'preventOverflow',
+            options: {
+              altAxis: true
+            }
+          }
+        ]
+      },
+      {
+        header: TourMultiLangMobile[state.lang]['step-2'].header,
+        content: TourMultiLangMobile[state.lang]['step-2'].content,
+        position: 'top-end',
+        target: '#step-2'
+      },
+      {
+        header: TourMultiLangMobile[state.lang]['step-3'].header,
+        content: TourMultiLangMobile[state.lang]['step-3'].content,
+        position: 'top',
+        target: '#step-3'
+      },
+      {
+        header: TourMultiLangMobile[state.lang]['step-4'].header,
+        content: TourMultiLangMobile[state.lang]['step-4'].content,
+        position: 'top-start',
+        target: '#step-4'
+      },
+      {
+        header: TourMultiLangMobile[state.lang]['step-5'].header,
+        content: TourMultiLangMobile[state.lang]['step-5'].content,
+        position: 'bottom-end',
+        target: '#step-5',
+        modifiers: [
+          {
+            name: 'offset',
+            options: {
+              offset: [20, 20]
+            }
+          }
+        ]
+      },
+      {
+        header: TourMultiLangMobile[state.lang]['step-6'].header,
+        content: TourMultiLangMobile[state.lang]['step-6'].content,
+        position: 'bottom-end',
+        target: '#step-6',
+        modifiers: [
+          {
+            name: 'offset',
+            options: {
+              offset: [20, 20]
+            }
+          }
+        ]
+      }
+    ]);
+
     const isPlay = computed(() => store.state.isPlay);
 
     const route = useRoute();
@@ -252,7 +327,7 @@ export default {
       state.isLoading.push(true);
     }
 
-    return { state, handleClose, isPlay, steps, handleLoad };
+    return { state, handleClose, isPlay, steps, handleLoad, stepsMobile };
   },
   async mounted() {
     const iframe = document.getElementsByTagName('iframe');
