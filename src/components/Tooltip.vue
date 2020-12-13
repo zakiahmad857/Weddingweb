@@ -1,6 +1,6 @@
 <template>
   <div class="tooltip__overlay"></div>
-  <div id="tooltip" class="tooltip" :class="this.position">
+  <div id="tooltip" class="tooltip" :class="[position]">
     <img
       @click.prevent="handleClose"
       src="../assets/icons/icon-close.svg"
@@ -26,7 +26,7 @@
         class="tooltip__btn"
         >{{ currentStep + 1 === lastStep ? 'Selesai' : 'Lanjut' }}</Button
       >
-      <Button v-else @click.prevent="this.handleNext" class="tooltip__btn">{{
+      <Button v-else @click.prevent="handleNext" class="tooltip__btn">{{
         currentStep + 1 === lastStep ? 'Finish' : 'Next'
       }}</Button>
     </div>
