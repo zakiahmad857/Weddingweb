@@ -55,7 +55,7 @@
           />
         </p>
         <img src="../assets/images/qr-bca.png" alt="qr-bca" />
-        <p class="text-3 sm center">Phone Number <span>3190158933</span></p>
+        <p class="text-3 sm center">Acc Number <span>3190158933</span></p>
         <p class="text-3 sm center">
           Account Name <span>Gammaditya Adhibarata W</span>
         </p>
@@ -75,7 +75,7 @@
           />
         </p>
         <img src="../assets/images/qr-mandiri.png" alt="qr-mandiri" />
-        <p class="text-3 sm center">Phone Number <span>9000033446627</span></p>
+        <p class="text-3 sm center">Acc Number <span>9000033446627</span></p>
         <p class="text-3 sm center">
           Account Name <span>Gammaditya Adhibarata Winarno</span>
         </p>
